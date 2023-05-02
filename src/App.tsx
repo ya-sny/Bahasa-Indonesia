@@ -1,10 +1,12 @@
-import React from 'react';
-import Number from './components/Number';
+import React from 'react'
+import Number from './components/Number'
 
 function App() {
   return (
-	<Number />
-	)
+    <>
+      <Number />
+    </>
+  )
 }
 
-export default App;
+export default App
