@@ -24,20 +24,11 @@ const Number: React.FC = () => {
     const convert3Digits = (number_of_digits: number, word: string): string => {
       switch (number_of_digits) {
         case 1:
-          return (
-            (str_number[0] !== '1' ? ones[str_number[0]] + `${word} ` : `satu ${word} `) +
-            convertToIndonesian(str_number.substring(1))
-          )
+          return (str_number[0] !== '1' ? ones[str_number[0]] + `${word} ` : `satu ${word} `) + convertToIndonesian(str_number.substring(1))
         case 2:
-          return (
-            convertToIndonesian(str_number.substring(0, 2)) + `${word} ` + convertToIndonesian(str_number.substring(2))
-          )
+          return convertToIndonesian(str_number.substring(0, 2)) + `${word} ` + convertToIndonesian(str_number.substring(2))
         case 3:
-          return (
-            convertToIndonesian(str_number.substring(0, 3)) +
-            `${word} ` +
-            convertToIndonesian('0' + str_number.substring(3))
-          )
+          return convertToIndonesian(str_number.substring(0, 3)) + `${word} ` + convertToIndonesian('0' + str_number.substring(3))
       }
       return 'null'
     }
@@ -49,11 +40,7 @@ const Number: React.FC = () => {
       case 2:
       case 3:
       case 4:
-        return (
-          ones[str_number[0]] +
-          ['puluh ', 'ratus ', 'ribu '][number_of_digits - 2] +
-          convertToIndonesian(str_number.substring(1))
-        )
+        return ones[str_number[0]] + ['puluh ', 'ratus ', 'ribu '][number_of_digits - 2] + convertToIndonesian(str_number.substring(1))
       case 5:
       case 6:
         return convert3Digits(number_of_digits - 3, 'ribu')
@@ -82,7 +69,7 @@ const Number: React.FC = () => {
       <div className="mt-5">
         <input
           type="text"
-          placeholder="Input"
+          placeholder="0 ~ 99999999999999"
           style={{ fontSize: '250%' }}
           className="form-control text-center"
           value={num}
